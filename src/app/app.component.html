@@ -1,8 +1,15 @@
 <div class="container">
   <p class="display-3">Fun Facts About Countries</p>
-  <button class="col-6">Go Back to Homepage</button>
-  <button class="col-6">List of all Countries</button>
+  <div class="col-12 d-flex justify-content-center">
+    <button *ngIf="!isHome" class="btn btn-dark navBtn" (click)="goToHome()">
+      Homepage
+    </button>
+    <button *ngIf="!isAll" class="btn btn-dark navBtn" (click)="goToAll()">
+      All Countries
+    </button>
+  </div>
   <hr>
   
-  <app-home [data]="countries"></app-home>  
+  <app-home *ngIf="isHome" [data]="countries"></app-home>
+  <app-allcountries *ngIf="isAll" [data]="countries"></app-allcountries>
 </div>

@@ -1,0 +1,19 @@
+.big-button-container {
+    height:auto;
+    color: aliceblue;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.big-button-container:nth-child(5n) {
+    margin-right: 1em;
+}
+
+.big-button {
+    height:10em;
+    padding: 1em;
+    background-color: green; 
+    color: aliceblue;
+    cursor: pointer;
+    padding: 10px;
+}

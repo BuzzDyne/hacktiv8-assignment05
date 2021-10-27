@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Country } from 'src/app/models/Country';
 
 @Component({
   selector: 'app-allcountries',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllcountriesComponent implements OnInit {
 
-  constructor() { }
+  @Input() data: Country[] = []
 
   ngOnInit(): void {
+    
   }
 
 }

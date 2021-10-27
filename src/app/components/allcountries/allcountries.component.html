@@ -1,1 +1,12 @@
-<p>allcountries works!</p>
+<div class="display-6">List of All Countries in Our Database</div>
+
+<div class="d-flex justify-content-center flex-wrap">
+    <div
+        *ngFor="let d of data"
+        class="big-button-container col-4">
+        <div class="big-button d-flex flex-column justify-content-center align-items-center">
+            <h5><strong>{{d.name}}</strong></h5>
+            <div>{{d.capital}}</div>
+        </div>
+    </div>
+</div>

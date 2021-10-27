@@ -10,6 +10,29 @@ export class AppComponent implements OnInit {
   title = 'country-app';
   countries: Country[] = []
 
+  // States
+  isHome: boolean   = false
+  isAll: boolean    = true
+  isDetail: boolean = false
+
+  goToHome() {
+    this.isHome   = true
+    this.isAll    = false
+    this.isDetail = false
+  }
+
+  goToAll() {
+    this.isHome   = false
+    this.isAll    = true
+    this.isDetail = false
+  }
+
+  goToDetail() {
+    this.isHome   = false
+    this.isAll    = false
+    this.isDetail = true
+  }
+
   ngOnInit(): void {
     this.countries = [
       {
