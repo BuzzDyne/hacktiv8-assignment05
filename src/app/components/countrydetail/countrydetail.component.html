@@ -1,1 +1,28 @@
-<p>countrydetail works!</p>
+<div class="display-6" style="margin-bottom: 0.5em;">{{data.name}}</div>
+
+<table class="table table-hover">
+    <tbody>
+        <tr class="table-light">
+            <th scope="row">Capital</th>
+            <td>{{data.capital}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Area</th>
+            <td>{{data.area | number}} km<sup>2</sup></td>
+        </tr>
+        <tr class="table-light">
+            <th scope="row">Population</th>
+            <td>{{data.population | number}}</td>
+        </tr>
+        <tr>
+            <th scope="row">GDP</th>
+            <td>{{data.gdp | number}} USD</td>
+        </tr>
+        <tr class="table-light">
+            <th scope="row">Currency</th>
+            <td>{{data.currency}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-danger" (click)="goBack()">Go Back</button>

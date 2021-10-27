@@ -2,14 +2,19 @@
   <p class="display-3">Fun Facts About Countries</p>
   <div class="col-12 d-flex justify-content-center">
     <button *ngIf="!isHome" class="btn btn-dark navBtn" (click)="goToHome()">
-      Homepage
+      Go to Homepage
     </button>
     <button *ngIf="!isAll" class="btn btn-dark navBtn" (click)="goToAll()">
-      All Countries
+      Go to All Countries
     </button>
   </div>
   <hr>
   
   <app-home *ngIf="isHome" [data]="countries"></app-home>
   <app-allcountries *ngIf="isAll" [data]="countries"></app-allcountries>
+  <app-countrydetail 
+    (goBackEventHandler)="goBack($event)"
+    *ngIf="isDetail" 
+    [data]="countries[1]" 
+    [isFromAll]="isAll"></app-countrydetail>
 </div>

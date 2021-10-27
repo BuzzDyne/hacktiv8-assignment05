@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
 
   // States
   isHome: boolean   = false
-  isAll: boolean    = true
-  isDetail: boolean = false
+  isAll: boolean    = false
+  isDetail: boolean = true
 
   goToHome() {
     this.isHome   = true
@@ -25,6 +25,10 @@ export class AppComponent implements OnInit {
     this.isHome   = false
     this.isAll    = true
     this.isDetail = false
+  }
+
+  goBack(isFromAll: boolean) {
+    isFromAll ? this.goToAll() : this.goToHome()
   }
 
   goToDetail() {

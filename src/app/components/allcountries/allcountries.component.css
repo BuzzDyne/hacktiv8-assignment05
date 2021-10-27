@@ -1,12 +1,18 @@
 .big-button-container {
     height:auto;
     color: aliceblue;
-    cursor: pointer;
     padding: 8px;
 }
+@media (max-width:990px) {
+    .big-button-container:nth-child(5n) {
+        margin-right: 1em;
+    }
+}
 
-.big-button-container:nth-child(5n) {
-    margin-right: 1em;
+@media (min-width:990px) {
+    .big-button-container:nth-child(7n) {
+        margin-right: 1em;
+    }
 }
 
 .big-button {
