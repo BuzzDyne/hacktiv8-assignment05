@@ -1,7 +1,10 @@
 <div class="display-6">Three Most Populated Countries</div>
 
 <div class="d-flex justify-content-around">
-    <div *ngFor="let m of mostPopulateds" class="big-button d-flex flex-column justify-content-center align-items-center">
+    <div 
+        (click)="goToDetails(m)"
+        *ngFor="let m of mostPopulateds" 
+        class="big-button d-flex flex-column justify-content-center align-items-center">
         <h5><strong>{{m.name}}</strong></h5>
         <div>{{m.population | number}} People</div>
     </div>
@@ -10,7 +13,10 @@
 <div class="display-6">Three Largest Countries (Land Area)</div>
 
 <div class="d-flex justify-content-around">
-    <div *ngFor="let l of largests" class="big-button d-flex flex-column justify-content-center align-items-center">
+    <div
+        (click)="goToDetails(l)"
+        *ngFor="let l of largests" 
+        class="big-button d-flex flex-column justify-content-center align-items-center">
         <h5><strong>{{l.name}}</strong></h5>
         <div>{{l.area | number}} km<sup>2</sup></div>
     </div>

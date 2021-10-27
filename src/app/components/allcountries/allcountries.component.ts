@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Country } from 'src/app/models/Country';
 
 @Component({
@@ -7,11 +7,16 @@ import { Country } from 'src/app/models/Country';
   styleUrls: ['./allcountries.component.css']
 })
 export class AllcountriesComponent implements OnInit {
+  @Output() goToDetailEvent = new EventEmitter<Country>()
 
   @Input() data: Country[] = []
 
   ngOnInit(): void {
     
+  }
+
+  goToDetails(c: Country) {
+    this.goToDetailEvent.emit(c)
   }
 
 }

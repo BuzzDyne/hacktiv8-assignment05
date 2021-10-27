@@ -9,11 +9,29 @@ import { Country } from './models/Country';
 export class AppComponent implements OnInit {
   title = 'country-app';
   countries: Country[] = []
+  detailCountry: Country = {
+    name: "string",
+    capital: "string",
+    area: 0,
+    population: 0,
+    gdp: 0,
+    currency: "string"
+  }
+  isFromAll: boolean = false
+
+  errorCountry: Country = {
+    name: "string",
+    capital: "string",
+    area: 0,
+    population: 0,
+    gdp: 0,
+    currency: "string"
+  }
 
   // States
-  isHome: boolean   = false
+  isHome: boolean   = true
   isAll: boolean    = false
-  isDetail: boolean = true
+  isDetail: boolean = false
 
   goToHome() {
     this.isHome   = true
@@ -29,6 +47,31 @@ export class AppComponent implements OnInit {
 
   goBack(isFromAll: boolean) {
     isFromAll ? this.goToAll() : this.goToHome()
+  }
+
+  homeToDetails(country: Country) {
+    let resCountry = this.countries.find(i => i.name === country.name)
+
+    if(resCountry == undefined) {
+      this.detailCountry = this.errorCountry
+    } else {
+      this.detailCountry = resCountry
+    }
+    this.isFromAll = false
+
+    this.goToDetail()
+  }
+
+  allToDetails(country: Country) {
+    let resCountry = this.countries.find(i => i.name === country.name)
+
+    if(resCountry == undefined) {
+      this.detailCountry = this.errorCountry
+    } else {
+      this.detailCountry = resCountry
+    }
+    this.isFromAll = true
+    this.goToDetail()
   }
 
   goToDetail() {

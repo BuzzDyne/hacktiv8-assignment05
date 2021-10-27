@@ -10,11 +10,17 @@
   </div>
   <hr>
   
-  <app-home *ngIf="isHome" [data]="countries"></app-home>
-  <app-allcountries *ngIf="isAll" [data]="countries"></app-allcountries>
+  <app-home 
+    (goToDetailEvent)="homeToDetails($event)"
+    *ngIf="isHome" 
+    [data]="countries"></app-home>
+  <app-allcountries 
+    (goToDetailEvent)="allToDetails($event)"
+    *ngIf="isAll" 
+    [data]="countries"></app-allcountries>
   <app-countrydetail 
     (goBackEventHandler)="goBack($event)"
     *ngIf="isDetail" 
-    [data]="countries[1]" 
-    [isFromAll]="isAll"></app-countrydetail>
+    [data]="detailCountry" 
+    [isFromAll]="isFromAll"></app-countrydetail>
 </div>
