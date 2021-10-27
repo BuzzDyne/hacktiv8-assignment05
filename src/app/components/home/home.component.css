@@ -1,0 +1,8 @@
+.big-button {
+    height:10em; 
+    width: 100%; 
+    margin: 10px; 
+    background-color: green; 
+    color: aliceblue;
+    cursor: pointer;
+}
