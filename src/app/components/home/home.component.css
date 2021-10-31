@@ -2,8 +2,38 @@
     height:10em; 
     width: 100%; 
     margin: 10px; 
-    background-color: green; 
     color: aliceblue;
     cursor: pointer;
     padding: 10px;
+    background-image: url(https://via.placeholder.com/400x300.png?text=019+Ricky);
+    background-position: center;
+    background-color: rgba(0, 0, 0, .6);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.big-button-container {
+    height:auto;
+    color: aliceblue;
+    padding: 8px;
+}
+
+.big-button-interactive {
+    width: 100%; 
+    height:10em; 
+    color: aliceblue;
+    cursor: pointer;
+    padding: 10px;
+    background-image: url(https://via.placeholder.com/400x300.png?text=019+Ricky);
+    background-position: center;
+    background-color: rgba(0, 0, 0, .6);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.my-select {
+    display: inline;
+    width: fit-content;
 }

@@ -4,9 +4,10 @@
     <div 
         (click)="goToDetails(m)"
         *ngFor="let m of mostPopulateds" 
-        class="big-button d-flex flex-column justify-content-center align-items-center">
+        style="background-image: url({{m.flag_url}});"
+        class="big-button bg-tint d-flex flex-column justify-content-center align-items-center">
         <h5><strong>{{m.name}}</strong></h5>
-        <div>{{m.population | number}} People</div>
+        <div>{{m.population | numberSuffix}} People</div>
     </div>
 </div>
 
@@ -15,9 +16,60 @@
 <div class="d-flex justify-content-around">
     <div
         (click)="goToDetails(l)"
-        *ngFor="let l of largests" 
+        *ngFor="let l of largests"
+        style="background-image: url({{l.flag_url}});"
         class="big-button d-flex flex-column justify-content-center align-items-center">
         <h5><strong>{{l.name}}</strong></h5>
-        <div>{{l.area | number}} km<sup>2</sup></div>
+        <div>{{l.area | numberSuffix}} km<sup>2</sup></div>
+    </div>
+</div>
+
+<div class="display-6">Interactive List</div>
+
+<select 
+    [(ngModel)]="selectedProp"
+    (change)="onFilterChange()"
+    class="form-select my-select">
+    <option value="" disabled>Choose one</option>
+    <option *ngFor="let p of opts_props" [ngValue]="p">{{p}}</option>
+</select>
+<select 
+    [(ngModel)]="selectedOrder"
+    (change)="onFilterChange()"
+    class="form-select my-select">
+    <option value="" disabled>Sort by</option>
+    <option *ngFor="let o of opts_order" [ngValue]="o">{{o}}</option>
+</select>
+<select 
+    [(ngModel)]="selectedCount"
+    (change)="onFilterChange()"
+    class="form-select my-select">
+    <option value="" disabled>Count</option>
+    <option *ngFor="let c of opts_count" [ngValue]="c">{{c}}</option>
+</select>
+
+<div class="d-flex justify-content-center flex-wrap">
+    <div
+        *ngFor="let l of interactiveCountries"
+        class="big-button-container d-flex flex-column justify-content-center align-items-center col-4">
+        
+        <div
+            (click)="goToDetails(l)"
+            style="background-image: url({{l.flag_url}});" 
+            class="big-button-interactive d-flex flex-column justify-content-center align-items-center"
+            >
+            <h5><strong>{{l.name}}</strong></h5>
+            <div *ngIf="selectedProp == opts_props[0]">
+                {{l.area | numberSuffix}} km<sup>2</sup>
+            </div>
+            <div *ngIf="selectedProp == opts_props[1]">
+                {{l.population | numberSuffix}} People
+            </div>
+            <div *ngIf="selectedProp == opts_props[2]">
+                {{l.gdp | numberSuffix}} USD
+            </div>
+        </div>
+        
+
     </div>
 </div>

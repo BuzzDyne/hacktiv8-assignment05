@@ -2,10 +2,13 @@
 
 <div class="d-flex justify-content-center flex-wrap">
     <div
-        (click)="goToDetails(d)"
         *ngFor="let d of data"
         class="big-button-container col-4 col-lg-3">
-        <div class="big-button d-flex flex-column justify-content-center align-items-center">
+        <div
+            (click)="goToDetails(d)"
+            style="background-image: url({{d.flag_url}});" 
+            class="big-button d-flex flex-column justify-content-center align-items-center"
+            >
             <h5><strong>{{d.name}}</strong></h5>
             <div>{{d.capital}}</div>
         </div>

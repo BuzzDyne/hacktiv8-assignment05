@@ -14,7 +14,8 @@ export class CountrydetailComponent implements OnInit {
     area: 0,
     population: 0,
     gdp: 0,
-    currency: "string"
+    currency: "string",
+    flag_url: "string"
   }
 
   @Input() isFromAll: boolean = false

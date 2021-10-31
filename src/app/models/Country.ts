@@ -5,4 +5,5 @@ export interface Country {
     population: number;
     gdp: number;
     currency: string;
+    flag_url: string;
 }

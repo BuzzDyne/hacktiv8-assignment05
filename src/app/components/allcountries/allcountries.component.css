@@ -18,7 +18,12 @@
 .big-button {
     height:10em;
     padding: 1em;
-    background-color: green; 
+    background-image: url(https://via.placeholder.com/400x300.png?text=019+Ricky);
+    background-position: center;
+    background-color: rgba(0, 0, 0, .6);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: aliceblue;
     cursor: pointer;
     padding: 10px;
